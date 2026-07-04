@@ -1,65 +1,298 @@
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { MapPin, ArrowUpRight, Zap, Code2, Server, Database, Smartphone, Mail, Phone } from "lucide-react";
+import { Header } from "@/components/header";
+
+const GithubIcon = ({ size = 24, ...props }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3-.3 6-1.5 6-6.5a5.4 5.4 0 0 0-1.5-3.8 5.4 5.4 0 0 0-.1-3.8s-1.2-.4-3.9 1.4a13.3 13.3 0 0 0-7 0C6.2 1.4 5 1.8 5 1.8a5.4 5.4 0 0 0-.1 3.8A5.4 5.4 0 0 0 3.4 9.4c0 5 3 6.2 6 6.5a4.8 4.8 0 0 0-1 3.2v4"></path>
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 24, ...props }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+);
+
+
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="flex flex-col min-h-screen bg-zinc-50 dark:bg-[#050505] text-zinc-900 dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black font-sans relative overflow-x-hidden transition-colors duration-300">
+
+      {/* Background Glow */}
+      <div className="absolute top-0 inset-x-0 h-[500px] w-full bg-gradient-to-b from-zinc-200/50 dark:from-zinc-800/20 to-transparent pointer-events-none transition-colors duration-300" />
+
+      {/* Interactive Header with Themes */}
+      <Header />
+
+      <main className="flex-1 flex flex-col relative z-10">
+
+        {/* Hero Section */}
+        <section id="home" className="min-h-screen flex flex-col-reverse md:flex-row justify-center items-center text-left px-6 pt-32 pb-20 max-w-6xl mx-auto w-full gap-12">
+
+          <div className="flex-1 flex flex-col items-start relative z-10">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
+              Desenvolvedor <br /> Fullstack<span className="text-zinc-400 dark:text-zinc-600 animate-blink">_</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-xl mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
+              Eu gosto de criar produtos sólidos e escaláveis com ótimas experiências de usuário, integrando interfaces modernas com backends robustos.
+            </p>
+            <div className="flex items-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-200">
+              <a href="#experience" className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors flex items-center gap-2">
+                Minha Experiência <ArrowUpRight size={18} />
+              </a>
+              <div className="flex gap-2">
+                <a href="https://github.com/icaroteodoro" target="_blank" rel="noreferrer" className="h-12 w-12 flex items-center justify-center border border-zinc-300 dark:border-zinc-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                  <GithubIcon size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/icaro-teodoro/" target="_blank" rel="noreferrer" className="h-12 w-12 flex items-center justify-center border border-zinc-300 dark:border-zinc-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                  <LinkedinIcon size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 w-full flex justify-center md:justify-end animate-in fade-in zoom-in duration-700">
+            <div className="relative flex justify-center items-center">
+              {/* SVG Animated Trace behind image */}
+              <svg className="absolute -z-10 w-[160%] h-[160%] max-w-none opacity-20 dark:opacity-30 text-zinc-400 dark:text-zinc-600 pointer-events-none" viewBox="0 0 400 400" fill="none">
+                <path d="M50 350 C 50 200, 300 200, 300 50" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8" className="animate-draw" strokeLinecap="round" />
+                <circle cx="50" cy="350" r="4" fill="currentColor" className="animate-pulse" />
+                <circle cx="300" cy="50" r="4" fill="currentColor" className="animate-pulse" />
+              </svg>
+
+              <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] z-10">
+                <Image
+                  src="/sobre.jpeg"
+                  alt="Ícaro Teodoro"
+                  fill
+                  className="object-cover rounded-3xl shadow-2xl border-2 border-zinc-200 dark:border-zinc-800/50"
+                  priority
+                />
+              </div>
+
+              {/* Floating Badges */}
+              <div className="absolute top-10 -left-6 md:-left-12 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="20" height="20" className="w-5 h-5 shrink-0" />
+                <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">React.js</span>
+              </div>
+
+              <div className="absolute bottom-16 -right-4 md:-right-8 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float-delayed z-20">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width="20" height="20" className="w-5 h-5 shrink-0" />
+                <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">Java</span>
+              </div>
+
+              <div className="absolute -top-4 right-6 md:right-10 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '1.5s' }}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="20" height="20" className="w-5 h-5 shrink-0 rounded-sm" />
+                <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">TypeScript</span>
+              </div>
+
+              <div className="absolute bottom-6 -left-4 md:-left-8 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '2.5s' }}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring" width="20" height="20" className="w-5 h-5 shrink-0" />
+                <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">Spring</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bento Box Section (Sobre & Habilidades) */}
+        <section id="about" className="px-6 py-24 max-w-6xl mx-auto w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            {/* About Card (Span 2) */}
+            <Card className="md:col-span-2 bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 p-2 md:p-4 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all group overflow-hidden relative shadow-sm dark:shadow-none">
+              <div className="absolute top-0 right-0 p-32 bg-zinc-100 dark:bg-white/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-zinc-200 dark:group-hover:bg-white/10 transition-all duration-700"></div>
+              <CardContent className="flex flex-col sm:flex-row gap-8 items-start relative z-10 pt-6">
+                <div className="w-32 h-32 md:w-40 md:h-40 relative rounded-xl overflow-hidden shrink-0 border border-zinc-200 dark:border-zinc-800 shadow-xl">
+                  <Image src="/sobre.jpeg" alt="Ícaro Teodoro" fill className="object-cover" />
+                </div>
+                <div className="flex-1 flex flex-col gap-4">
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Sobre a Jornada</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                    Desenvolvedor Fullstack com 3 anos de experiência focada em backend (Java e Spring Boot) e na criação de aplicações web e mobile escaláveis. Atuo na construção de sistemas completos com React, Next.js e React Native. Tenho forte vivência com automação de processos, integração de IA e pipelines CI/CD, buscando sempre elevar a eficiência operacional e a qualidade das entregas.
+                  </p>
+                  <div className="flex items-center gap-2 text-zinc-500 text-sm font-mono mt-2">
+                    <MapPin size={16} /> Maceió, Alagoas — Brasil
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Backend Stack */}
+            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+              <CardHeader>
+                <Server className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                <CardTitle className="text-lg text-zinc-900 dark:text-white">Backend & Arquitetura</CardTitle>
+                <CardDescription className="text-zinc-500">Desenvolvimento robusto e seguro.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-wrap gap-2">
+                {["Java", "Spring Boot", "Node.js", "Docker", "CI/CD"].map(s => (
+                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Frontend Stack */}
+            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+              <CardHeader>
+                <Code2 className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                <CardTitle className="text-lg text-zinc-900 dark:text-white">Frontend & Web</CardTitle>
+                <CardDescription className="text-zinc-500">Interfaces modernas e otimizadas.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-wrap gap-2">
+                {["React", "Next.js", "TypeScript", "Tailwind CSS"].map(s => (
+                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Mobile Stack */}
+            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+              <CardHeader>
+                <Smartphone className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                <CardTitle className="text-lg text-zinc-900 dark:text-white">Mobile</CardTitle>
+                <CardDescription className="text-zinc-500">Apps nativos e performáticos.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-wrap gap-2">
+                {["React Native", "Expo"].map(s => (
+                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* DB & Testing */}
+            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+              <CardHeader>
+                <Database className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                <CardTitle className="text-lg text-zinc-900 dark:text-white">Dados & Testes</CardTitle>
+                <CardDescription className="text-zinc-500">Qualidade e persistência.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-wrap gap-2">
+                {["MySQL", "PostgreSQL", "Supabase", "JUnit", "Cypress"].map(s => (
+                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                ))}
+              </CardContent>
+            </Card>
+
+          </div>
+        </section>
+
+        {/* Experiência Section (Timeline Alternada) */}
+        <section id="experience" className="px-6 py-24 max-w-6xl mx-auto w-full relative">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Experiência Profissional</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg">
+              Minha trajetória construindo sistemas de ponta a ponta.
+            </p>
+          </div>
+
+          <div className="relative wrap overflow-hidden p-0 md:p-10 h-full">
+            {/* The vertical line */}
+            <div className="absolute border-l border-zinc-300 dark:border-zinc-800 h-full left-[23px] md:left-1/2 transform md:-translate-x-1/2 top-0"></div>
+
+            {/* Item 1 (Left on Desktop, Right on Mobile) */}
+            <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-center w-full relative">
+              {/* Marker */}
+              <div className="absolute left-[23px] md:left-1/2 w-4 h-4 bg-zinc-900 dark:bg-white rounded-full transform -translate-x-1/2 mt-2 md:mt-0 shadow-md z-10"></div>
+
+              {/* Content Box */}
+              <div className="w-full md:w-[45%] pl-14 md:pl-0 md:pr-12">
+                <div className="py-2 md:text-right">
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">Desenvolvedor Fullstack | Freelance</h3>
+                  <p className="text-zinc-500 font-mono text-sm mb-6">Outubro de 2025 — Março de 2026</p>
+
+                  <div className="flex flex-col gap-3 text-zinc-600 dark:text-zinc-400 mb-6 text-base leading-relaxed [&_strong]:text-zinc-900 [&_strong]:dark:text-white [&_strong]:font-semibold">
+                    <p>Participei do desenvolvimento de um sistema completo para gestão de serviços públicos para a Prefeitura de Maribondo, AL, centralizando solicitações e otimizando o tempo de resposta em aproximadamente <strong>25%</strong> através da implementação de um fluxo digital de ponta a ponta.</p>
+                    <p>Criei um aplicativo mobile usando <strong>React Native</strong> (<strong>Expo</strong>) que permite aos cidadãos registrar ocorrências com geolocalização e fotos, além de implementar autenticação segura e notificações push. Participei na estruturação do backend com <strong>Java</strong> (<strong>Spring Boot</strong>) e um painel administrativo em <strong>Angular</strong>.</p>
+                    <p>Desenvolvi um sistema web para gerenciamento de clientes e processos para um escritório de advocacia, incluindo módulo financeiro, controle de prazos e Kanban, implementando RBAC com <strong>Java</strong>, <strong>Next.js</strong> no frontend e <strong>MySQL</strong>.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Empty Space for Desktop Right Side */}
+              <div className="hidden md:block w-[45%]"></div>
+            </div>
+
+            {/* Item 2 (Right on Desktop, Right on Mobile) */}
+            <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-center w-full relative">
+              {/* Marker */}
+              <div className="absolute left-[23px] md:left-1/2 w-4 h-4 bg-zinc-200 dark:bg-zinc-800 border border-zinc-400 dark:border-zinc-600 rounded-full transform -translate-x-1/2 mt-2 md:mt-0 shadow-md z-10"></div>
+
+              {/* Empty Space for Desktop Left Side */}
+              <div className="hidden md:block w-[45%]"></div>
+
+              {/* Content Box */}
+              <div className="w-full md:w-[45%] pl-14 md:pl-12">
+                <div className="py-2">
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">Desenvolvedor Fullstack | ClickEvolue</h3>
+                  <p className="text-zinc-500 font-mono text-sm mb-6">Agosto de 2023 — Outubro de 2025</p>
+
+                  <div className="flex flex-col gap-3 text-zinc-600 dark:text-zinc-400 mb-6 text-base leading-relaxed [&_strong]:text-zinc-900 [&_strong]:dark:text-white [&_strong]:font-semibold">
+                    <p>Desenvolvi um sistema de gerenciamento de clientes para substituir planilhas usando <strong>Next.js</strong>, centralizando dados em uma aplicação web e reduzindo inconsistências.</p>
+                    <p>Criei um sistema automatizado para geração de posts de blog usando Inteligência Artificial e <strong>Next.js</strong>, reduzindo o tempo de entrega de conteúdo em <strong>80%</strong>.</p>
+                    <p>Integrei IA ao CMS da empresa para geração de conteúdo, diminuindo o tempo de produção em até <strong>70%</strong> com microsserviços em <strong>Node.js</strong> (<strong>Express.js</strong>).</p>
+                    <p>Implementei e otimizei pipelines de CI/CD no <strong>GitLab CI</strong>, automatizando os processos de build e deploy, reduzindo a taxa de erros em produção em cerca de <strong>15%</strong>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Item 3 (Left on Desktop, Right on Mobile) */}
+            <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-center w-full relative">
+              {/* Marker */}
+              <div className="absolute left-[23px] md:left-1/2 w-4 h-4 bg-zinc-200 dark:bg-zinc-800 border border-zinc-400 dark:border-zinc-600 rounded-full transform -translate-x-1/2 mt-2 md:mt-0 shadow-md z-10"></div>
+
+              {/* Content Box */}
+              <div className="w-full md:w-[45%] pl-14 md:pl-0 md:pr-12">
+                <div className="py-2 md:text-right">
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">Desenvolvedor Fullstack (Estágio) | ClickEvolue</h3>
+                  <p className="text-zinc-500 font-mono text-sm mb-6">Fevereiro de 2023 — Agosto de 2023</p>
+
+                  <div className="flex flex-col gap-3 text-zinc-600 dark:text-zinc-400 mb-6 text-base leading-relaxed [&_strong]:text-zinc-900 [&_strong]:dark:text-white [&_strong]:font-semibold">
+                    <p>Atuei na manutenção de sites já criados pela empresa e participei da criação de novos projetos. Na maioria dos casos, utilizamos <strong>PHP</strong> para a construção do back-end.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Empty Space for Desktop Right Side */}
+              <div className="hidden md:block w-[45%]"></div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer id="contact" className="border-t border-zinc-200 dark:border-zinc-900 mt-12 bg-zinc-50 dark:bg-[#050505] transition-colors duration-300">
+          <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Pronto para inovar?</h2>
+              <p className="text-zinc-500">Vamos conversar sobre seu próximo projeto.</p>
+              <a href="https://wa.me/5582998389953?text=Olá%20Ícaro,%20gostaria%20de%20falar%20sobre%20um%20projeto!" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors inline-block mt-2">
+                Falar no WhatsApp
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-4 text-zinc-500 text-sm">
+              <a href="mailto:icaro.teodoro84@gmail.com" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><Mail size={16} /> icaro.teodoro84@gmail.com</a>
+              <a href="https://wa.me/5582998389953" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><Phone size={16} /> (82) 99838-9953</a>
+              <a href="https://linkedin.com/in/icaroteodoro" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><LinkedinIcon size={16} /> LinkedIn</a>
+              <a href="https://github.com/icaroteodoro" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><GithubIcon size={16} /> GitHub</a>
+            </div>
+          </div>
+
+          <div className="border-t border-zinc-200 dark:border-zinc-900 py-6 text-center text-zinc-500 dark:text-zinc-600 text-xs font-mono">
+            <p>© {new Date().getFullYear()} Ícaro Teodoro. Todos os direitos reservados.</p>
+          </div>
+        </footer>
+
       </main>
     </div>
   );
 }
+
