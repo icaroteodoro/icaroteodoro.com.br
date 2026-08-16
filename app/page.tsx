@@ -93,10 +93,10 @@ export default function Home() {
                 Minha Experiência <ArrowUpRight size={18} />
               </a>
               <div className="flex gap-2">
-                <a href="https://github.com/icaroteodoro" target="_blank" rel="noreferrer" className="h-12 w-12 flex items-center justify-center border border-zinc-300 dark:border-zinc-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                <a href="https://github.com/icaroteodoro" target="_blank" rel="noreferrer" aria-label="Perfil do GitHub de Ícaro Teodoro" className="h-12 w-12 flex items-center justify-center border border-zinc-300 dark:border-zinc-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                   <GithubIcon size={20} />
                 </a>
-                <a href="https://www.linkedin.com/in/icaro-teodoro/" target="_blank" rel="noreferrer" className="h-12 w-12 flex items-center justify-center border border-zinc-300 dark:border-zinc-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                <a href="https://www.linkedin.com/in/icaro-teodoro/" target="_blank" rel="noreferrer" aria-label="Perfil do LinkedIn de Ícaro Teodoro" className="h-12 w-12 flex items-center justify-center border border-zinc-300 dark:border-zinc-800 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                   <LinkedinIcon size={20} />
                 </a>
               </div>
@@ -159,7 +159,7 @@ export default function Home() {
                   <Image src="/sobre.jpeg" alt="Ícaro Teodoro" fill className="object-cover" />
                 </div>
                 <div className="flex-1 flex flex-col gap-4">
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Sobre</h3>
+                  <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Sobre</h2>
                   <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                     Engenheiro de Software Java com foco em Spring Boot, com experiência em APIs REST, autenticação e autorização (JWT e RBAC), integração de sistemas e bancos de dados relacionais. Atualmente desenvolvo a API em Java/Spring Boot de uma plataforma de gestão de serviços públicos para a Prefeitura de Maribondo - AL, atuando em funcionalidades como autenticação, notificações push, geolocalização e integração entre sistemas. Também tenho experiência com Docker, CI/CD e desenvolvimento de aplicações web e mobile com React Native.
                   </p>
