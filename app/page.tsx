@@ -24,6 +24,51 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-zinc-50 dark:bg-[#050505] text-zinc-900 dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black font-sans relative overflow-x-hidden transition-colors duration-300">
 
+      {/* JSON-LD Structured Data — Schema.org Person */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Ícaro Teodoro",
+            url: "https://icaroteodoro.com.br",
+            image: "https://icaroteodoro.com.br/sobre.jpeg",
+            jobTitle: "Engenheiro de Software Java",
+            description:
+              "Engenheiro de Software Java especializado em Spring Boot, APIs REST, autenticação JWT/RBAC, microsserviços, Docker, CI/CD e desenvolvimento mobile com React Native.",
+            knowsAbout: [
+              "Java",
+              "Spring Boot",
+              "Spring Security",
+              "APIs REST",
+              "Microsserviços",
+              "JWT",
+              "RBAC",
+              "Docker",
+              "Kubernetes",
+              "CI/CD",
+              "React Native",
+              "Next.js",
+              "PostgreSQL",
+              "MySQL",
+              "MongoDB",
+              "Apache Kafka",
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Maceió",
+              addressRegion: "Alagoas",
+              addressCountry: "BR",
+            },
+            sameAs: [
+              "https://github.com/icaroteodoro",
+              "https://linkedin.com/in/icaro-teodoro",
+            ],
+          }),
+        }}
+      />
+
       {/* Background Glow */}
       <div className="absolute top-0 inset-x-0 h-[500px] w-full bg-gradient-to-b from-zinc-200/50 dark:from-zinc-800/20 to-transparent pointer-events-none transition-colors duration-300" />
 
@@ -36,12 +81,12 @@ export default function Home() {
         <section id="home" className="min-h-screen flex flex-col-reverse md:flex-row justify-center items-center text-left px-6 pt-32 pb-20 max-w-6xl mx-auto w-full gap-12">
 
           <div className="flex-1 flex flex-col items-start relative z-10">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
-              Desenvolvedor <br /> Fullstack<span className="text-zinc-400 dark:text-zinc-600 animate-blink">_</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
+              Engenheiro de <br /> Software Java<span className="text-zinc-400 dark:text-zinc-600 animate-blink">_</span>
             </h1>
 
             <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-xl mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-              Eu gosto de criar produtos sólidos e escaláveis com ótimas experiências de usuário, integrando interfaces modernas com backends robustos.
+              3 anos desenvolvendo sistemas completos com Java, Spring Boot, React Native e Next.js. Do backend à interface e integração com IA.
             </p>
             <div className="flex items-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-200">
               <a href="#experience" className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors flex items-center gap-2">
@@ -74,28 +119,29 @@ export default function Home() {
                   fill
                   className="object-cover rounded-3xl shadow-2xl border-2 border-zinc-200 dark:border-zinc-800/50"
                   priority
+                  sizes="(max-width: 768px) 288px, 450px"
                 />
               </div>
 
               {/* Floating Badges */}
               <div className="absolute top-10 -left-6 md:-left-12 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="20" height="20" className="w-5 h-5 shrink-0" />
-                <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">React.js</span>
-              </div>
-
-              <div className="absolute bottom-16 -right-4 md:-right-8 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float-delayed z-20">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width="20" height="20" className="w-5 h-5 shrink-0" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width="20" height="20" loading="lazy" decoding="async" className="w-5 h-5 shrink-0" />
                 <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">Java</span>
               </div>
 
-              <div className="absolute -top-4 right-6 md:right-10 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '1.5s' }}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="20" height="20" className="w-5 h-5 shrink-0 rounded-sm" />
+              <div className="absolute bottom-16 -right-4 md:-right-8 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float-delayed z-20">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="20" height="20" loading="lazy" decoding="async" className="w-5 h-5 shrink-0 rounded-sm" />
                 <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">TypeScript</span>
               </div>
 
-              <div className="absolute bottom-6 -left-4 md:-left-8 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '2.5s' }}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring" width="20" height="20" className="w-5 h-5 shrink-0" />
+              <div className="absolute -top-4 right-6 md:right-10 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '1.5s' }}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring" width="20" height="20" loading="lazy" decoding="async" className="w-5 h-5 shrink-0" />
                 <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">Spring</span>
+              </div>
+
+              <div className="absolute bottom-6 -left-4 md:-left-8 bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '2.5s' }}>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React Native" width="20" height="20" loading="lazy" decoding="async" className="w-5 h-5 shrink-0" />
+                <span className="font-mono text-sm font-bold text-zinc-900 dark:text-white">React Native</span>
               </div>
             </div>
           </div>
@@ -103,19 +149,19 @@ export default function Home() {
 
         {/* Bento Box Section (Sobre & Habilidades) */}
         <section id="about" className="px-6 py-24 max-w-6xl mx-auto w-full">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex flex-col gap-6">
 
-            {/* About Card (Span 2) */}
-            <Card className="md:col-span-2 bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 p-2 md:p-4 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all group overflow-hidden relative shadow-sm dark:shadow-none">
+            {/* About Card — full width */}
+            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 p-2 md:p-4 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all group overflow-hidden relative shadow-sm dark:shadow-none">
               <div className="absolute top-0 right-0 p-32 bg-zinc-100 dark:bg-white/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-zinc-200 dark:group-hover:bg-white/10 transition-all duration-700"></div>
               <CardContent className="flex flex-col sm:flex-row gap-8 items-start relative z-10 pt-6">
-                <div className="w-32 h-32 md:w-40 md:h-40 relative rounded-xl overflow-hidden shrink-0 border border-zinc-200 dark:border-zinc-800 shadow-xl">
+                <div className="w-32 h-32 md:w-40 md:h-56 relative rounded-xl overflow-hidden shrink-0 border border-zinc-200 dark:border-zinc-800 shadow-xl">
                   <Image src="/sobre.jpeg" alt="Ícaro Teodoro" fill className="object-cover" />
                 </div>
                 <div className="flex-1 flex flex-col gap-4">
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Sobre a Jornada</h3>
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Sobre</h3>
                   <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                    Desenvolvedor Fullstack com 3 anos de experiência focada em backend (Java e Spring Boot) e na criação de aplicações web e mobile escaláveis. Atuo na construção de sistemas completos com React, Next.js e React Native. Tenho forte vivência com automação de processos, integração de IA e pipelines CI/CD, buscando sempre elevar a eficiência operacional e a qualidade das entregas.
+                    Engenheiro de Software Java com foco em Spring Boot, com experiência em APIs REST, autenticação e autorização (JWT e RBAC), integração de sistemas e bancos de dados relacionais. Atualmente desenvolvo a API em Java/Spring Boot de uma plataforma de gestão de serviços públicos para a Prefeitura de Maribondo - AL, atuando em funcionalidades como autenticação, notificações push, geolocalização e integração entre sistemas. Também tenho experiência com Docker, CI/CD e desenvolvimento de aplicações web e mobile com React Native.
                   </p>
                   <div className="flex items-center gap-2 text-zinc-500 text-sm font-mono mt-2">
                     <MapPin size={16} /> Maceió, Alagoas — Brasil
@@ -124,61 +170,66 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* Backend Stack */}
-            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
-              <CardHeader>
-                <Server className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
-                <CardTitle className="text-lg text-zinc-900 dark:text-white">Backend & Arquitetura</CardTitle>
-                <CardDescription className="text-zinc-500">Desenvolvimento robusto e seguro.</CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {["Java", "Spring Boot", "Node.js", "Docker", "CI/CD"].map(s => (
-                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
-                ))}
-              </CardContent>
-            </Card>
+            {/* Skill Cards — 4 cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            {/* Frontend Stack */}
-            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
-              <CardHeader>
-                <Code2 className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
-                <CardTitle className="text-lg text-zinc-900 dark:text-white">Frontend & Web</CardTitle>
-                <CardDescription className="text-zinc-500">Interfaces modernas e otimizadas.</CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {["React", "Next.js", "TypeScript", "Tailwind CSS"].map(s => (
-                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
-                ))}
-              </CardContent>
-            </Card>
+              {/* Backend */}
+              <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+                <CardHeader>
+                  <Server className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                  <CardTitle className="text-lg text-zinc-900 dark:text-white">Backend & Arquitetura</CardTitle>
+                  <CardDescription className="text-zinc-500">APIs, segurança e integrações.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "Node.js", "REST APIs", "Microsserviços", "JWT", "RBAC"].map(s => (
+                    <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* Mobile Stack */}
-            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
-              <CardHeader>
-                <Smartphone className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
-                <CardTitle className="text-lg text-zinc-900 dark:text-white">Mobile</CardTitle>
-                <CardDescription className="text-zinc-500">Apps nativos e performáticos.</CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {["React Native", "Expo"].map(s => (
-                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
-                ))}
-              </CardContent>
-            </Card>
+              {/* Frontend & Mobile */}
+              <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+                <CardHeader>
+                  <Smartphone className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                  <CardTitle className="text-lg text-zinc-900 dark:text-white">Frontend & Mobile</CardTitle>
+                  <CardDescription className="text-zinc-500">Web, interfaces e apps nativos.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {["TypeScript", "JavaScript", "React", "Next.js", "Angular", "React Native", "Expo"].map(s => (
+                    <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* DB & Testing */}
-            <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
-              <CardHeader>
-                <Database className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
-                <CardTitle className="text-lg text-zinc-900 dark:text-white">Dados & Testes</CardTitle>
-                <CardDescription className="text-zinc-500">Qualidade e persistência.</CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {["MySQL", "PostgreSQL", "Supabase", "JUnit", "Cypress"].map(s => (
-                  <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
-                ))}
-              </CardContent>
-            </Card>
+              {/* Banco de Dados */}
+              <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+                <CardHeader>
+                  <Database className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                  <CardTitle className="text-lg text-zinc-900 dark:text-white">Banco de Dados</CardTitle>
+                  <CardDescription className="text-zinc-500">Modelagem e persistência.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {["MySQL", "PostgreSQL", "MongoDB", "Redis"].map(s => (
+                    <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                  ))}
+                </CardContent>
+              </Card>
+
+              {/* DevOps & Mensageria */}
+              <Card className="bg-white dark:bg-[#0a0a0a] border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+                <CardHeader>
+                  <Zap className="w-8 h-8 mb-2 text-zinc-700 dark:text-zinc-300" />
+                  <CardTitle className="text-lg text-zinc-900 dark:text-white">DevOps & Infra</CardTitle>
+                  <CardDescription className="text-zinc-500">Entrega, escala e observabilidade.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {["Docker", "Kubernetes", "GitHub Actions", "GitLab CI/CD", "Apache Kafka", "RabbitMQ", "Prometheus", "Grafana", "OpenTelemetry"].map(s => (
+                    <Badge key={s} variant="secondary" className="bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black">{s}</Badge>
+                  ))}
+                </CardContent>
+              </Card>
+
+            </div>
 
           </div>
         </section>
@@ -204,7 +255,7 @@ export default function Home() {
               {/* Content Box */}
               <div className="w-full md:w-[45%] pl-14 md:pl-0 md:pr-12">
                 <div className="py-2 md:text-right">
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">Desenvolvedor Fullstack | Freelance</h3>
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">Engenheiro de Software Java | Autônomo</h3>
                   <p className="text-zinc-500 font-mono text-sm mb-6">Outubro de 2025 — Março de 2026</p>
 
                   <div className="flex flex-col gap-3 text-zinc-600 dark:text-zinc-400 mb-6 text-base leading-relaxed [&_strong]:text-zinc-900 [&_strong]:dark:text-white [&_strong]:font-semibold">
@@ -281,7 +332,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 text-zinc-500 text-sm">
               <a href="mailto:icaro.teodoro84@gmail.com" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><Mail size={16} /> icaro.teodoro84@gmail.com</a>
               <a href="https://wa.me/5582998389953" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><Phone size={16} /> (82) 99838-9953</a>
-              <a href="https://linkedin.com/in/icaroteodoro" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><LinkedinIcon size={16} /> LinkedIn</a>
+              <a href="https://linkedin.com/in/icaro-teodoro" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><LinkedinIcon size={16} /> LinkedIn</a>
               <a href="https://github.com/icaroteodoro" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors flex items-center gap-3"><GithubIcon size={16} /> GitHub</a>
             </div>
           </div>
