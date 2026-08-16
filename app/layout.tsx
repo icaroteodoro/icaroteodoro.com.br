@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -107,6 +108,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} h-full antialiased font-sans scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
+        <GoogleTagManager gtmId="GTM-N8MD4KCH" />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
