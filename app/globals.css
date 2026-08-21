@@ -158,3 +158,34 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+.case-gallery-scrollbar {
+  scrollbar-color: var(--color-zinc-400) var(--color-zinc-200);
+  scrollbar-width: thin;
+}
+
+.case-gallery-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.case-gallery-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-zinc-200);
+  border-radius: 9999px;
+}
+
+.case-gallery-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-zinc-400);
+  border-radius: 9999px;
+}
+
+.dark .case-gallery-scrollbar {
+  scrollbar-color: var(--color-zinc-600) var(--color-zinc-800);
+}
+
+.dark .case-gallery-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-zinc-800);
+}
+
+.dark .case-gallery-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-zinc-600);
+}

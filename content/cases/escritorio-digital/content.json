@@ -34,15 +34,21 @@
   "screenshots": [
     {
       "src": "/cases/escritorio-digital/tela-1.jpeg",
-      "alt": "Cadastro de cliente com adaptação PF/PJ em tempo real"
+      "alt": "Cadastro de cliente com adaptação PF/PJ em tempo real",
+      "width": 1024,
+      "height": 516
     },
     {
       "src": "/cases/escritorio-digital/tela-2.png",
-      "alt": "Quadro Kanban de processos jurídicos"
+      "alt": "Quadro Kanban de processos jurídicos",
+      "width": 2764,
+      "height": 1298
     },
     {
       "src": "/cases/escritorio-digital/tela-3.jpeg",
-      "alt": "Dashboard com visão geral financeira e métricas"
+      "alt": "Dashboard com visão geral financeira e métricas",
+      "width": 1024,
+      "height": 554
     }
   ],
   "stack": {

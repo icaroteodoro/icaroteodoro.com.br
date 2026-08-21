@@ -19,6 +19,8 @@ export interface Feature {
 export interface Screenshot {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 }
 
 export interface CaseData {

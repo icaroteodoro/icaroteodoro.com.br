@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Header } from '@/components/header';
+import { CaseGalleryCarousel } from '@/components/case-gallery-carousel';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -85,27 +86,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           <div className="max-w-4xl mx-auto px-6 pb-10">
             <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-6">Galeria</p>
 
-            {/* Primeira imagem — largura total */}
-            <figure className="mb-4">
-              <div className="h-72 md:h-96 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md bg-white dark:bg-zinc-900">
-                <img src={c.screenshots[0].src} alt={c.screenshots[0].alt} className="h-full w-full object-cover block" />
-              </div>
-              <figcaption className="text-xs text-zinc-400 mt-2 px-0.5">{c.screenshots[0].alt}</figcaption>
-            </figure>
-
-            {/* Restantes em grid 2 colunas */}
-            {c.screenshots.length > 1 && (
-              <div className="grid grid-cols-2 gap-4">
-                {c.screenshots.slice(1).map((s, i) => (
-                  <figure key={i}>
-                    <div className="h-72 md:h-96 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md bg-white dark:bg-zinc-900">
-                      <img src={s.src} alt={s.alt} className="h-full w-full object-cover block" />
-                    </div>
-                    <figcaption className="text-xs text-zinc-400 mt-2 px-0.5">{s.alt}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            )}
+            <CaseGalleryCarousel screenshots={c.screenshots} />
           </div>
         )}
 

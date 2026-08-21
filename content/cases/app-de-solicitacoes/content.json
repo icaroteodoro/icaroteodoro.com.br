@@ -3,7 +3,7 @@
     "type": "App Mobile + API REST",
     "excerpt": "Sistema completo de solicitações de serviços públicos para a Prefeitura Municipal de Maribondo/AL — app mobile para cidadãos e API REST robusta com controle de acesso por perfil.",
     "date": "2024-06-01",
-    "coverImage": "/cases/app-de-solicitacoes/capa.png",
+    "coverImage": "/cases/app-de-solicitacoes/capa.jpg",
     "challenge": "A Prefeitura Municipal de Maribondo precisava digitalizar o processo de abertura e acompanhamento de solicitações de serviços públicos pelos cidadãos — que antes era feito presencialmente ou por telefone, sem rastreabilidade. O desafio era criar uma solução acessível para qualquer pessoa, com controle de acesso multi-perfil (cidadão, servidor e administrador), notificações em tempo real e infraestrutura confiável para uso governamental.",
     "features": [
         {
@@ -37,7 +37,38 @@
             "imageAlt": null
         }
     ],
-    "screenshots": [],
+    "screenshots": [
+        {
+            "src": "/cases/app-de-solicitacoes/mobile/first-screen.jpg",
+            "alt": "Tela inicial de apresentação do aplicativo",
+            "width": 440,
+            "height": 956
+        },
+        {
+            "src": "/cases/app-de-solicitacoes/mobile/home-screen.jpg",
+            "alt": "Tela principal com serviços e avisos da prefeitura",
+            "width": 440,
+            "height": 969
+        },
+        {
+            "src": "/cases/app-de-solicitacoes/mobile/minhas-solicitacoes.jpg",
+            "alt": "Acompanhamento das solicitações do cidadão",
+            "width": 440,
+            "height": 956
+        },
+        {
+            "src": "/cases/app-de-solicitacoes/painel/solicitacoes.jpg",
+            "alt": "Painel administrativo com a lista de solicitações",
+            "width": 1440,
+            "height": 1024
+        },
+        {
+            "src": "/cases/app-de-solicitacoes/painel/solicitacao-detalhes.jpg",
+            "alt": "Detalhes e gerenciamento de uma solicitação",
+            "width": 1440,
+            "height": 1163
+        }
+    ],
     "stack": {
         "backend": [
             {
