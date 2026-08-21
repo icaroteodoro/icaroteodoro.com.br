@@ -1,0 +1,110 @@
+{
+    "title": "App de Solicitações",
+    "type": "App Mobile + API REST",
+    "excerpt": "Sistema completo de solicitações de serviços públicos para a Prefeitura Municipal de Maribondo/AL — app mobile para cidadãos e API REST robusta com controle de acesso por perfil.",
+    "date": "2024-06-01",
+    "coverImage": "/cases/app-de-solicitacoes/capa.png",
+    "challenge": "A Prefeitura Municipal de Maribondo precisava digitalizar o processo de abertura e acompanhamento de solicitações de serviços públicos pelos cidadãos — que antes era feito presencialmente ou por telefone, sem rastreabilidade. O desafio era criar uma solução acessível para qualquer pessoa, com controle de acesso multi-perfil (cidadão, servidor e administrador), notificações em tempo real e infraestrutura confiável para uso governamental.",
+    "features": [
+        {
+            "title": "App Mobile para Cidadãos (React Native + Expo)",
+            "description": "Desenvolvi o aplicativo do zero com React Native e Expo Router. O cidadão pode criar uma conta, fazer login com biometria (Face ID / impressão digital), abrir solicitações por categoria com foto anexada via câmera ou galeria, acompanhar o status em tempo real e receber notificações push. Cada usuário pode ter até 4 solicitações abertas simultaneamente.",
+            "image": null,
+            "imageAlt": null
+        },
+        {
+            "title": "Controle de Acesso Multi-Perfil (RBAC)",
+            "description": "A API implementa autenticação JWT stateless com dois fluxos distintos: um para o app dos cidadãos (solicitantes) e outro para o painel administrativo dos servidores. Permissões granulares (SOLICITACAO_LEITURA, SOLICITACAO_ESCRITA, SOLICITACAO_EXCLUSAO) controlam o que cada perfil pode fazer, via Spring Security com @PreAuthorize.",
+            "image": null,
+            "imageAlt": null
+        },
+        {
+            "title": "Gestão de Solicitações e Atribuição de Responsável",
+            "description": "Servidores recebem as solicitações abertas, podem atribuir um responsável, atualizar o status (Aberto, Em Andamento, Concluído, Cancelado) e filtrar por categoria, secretaria ou status via Specifications dinâmicas. Todo o fluxo é rastreável e auditável.",
+            "image": null,
+            "imageAlt": null
+        },
+        {
+            "title": "Notificações Push em Tempo Real",
+            "description": "Integração com Firebase Cloud Messaging (FCM) para envio de notificações push. Quando o status de uma solicitação é atualizado por um servidor, o cidadão é notificado instantaneamente no app. Os tokens de dispositivo são gerenciados pela própria API e vinculados ao perfil do usuário.",
+            "image": null,
+            "imageAlt": null
+        },
+        {
+            "title": "Avisos e Comunicados da Prefeitura",
+            "description": "Módulo de avisos institucionais onde administradores publicam comunicados que aparecem na tela inicial do app. Cidadãos recebem notificação push a cada novo aviso publicado, mantendo a população informada sobre ações e obras da prefeitura.",
+            "image": null,
+            "imageAlt": null
+        }
+    ],
+    "screenshots": [],
+    "stack": {
+        "backend": [
+            {
+                "label": "Linguagem & Framework",
+                "value": "Java 21 + Spring Boot 3.5.6"
+            },
+            {
+                "label": "Segurança",
+                "value": "Spring Security + JWT (Auth0 java-jwt 4.4)"
+            },
+            {
+                "label": "Banco de Dados",
+                "value": "MariaDB com versionamento via Flyway"
+            },
+            {
+                "label": "Mapeamento",
+                "value": "MapStruct 1.5 — conversão entre entidades e DTOs"
+            },
+            {
+                "label": "Notificações",
+                "value": "Firebase Admin SDK — push via FCM"
+            },
+            {
+                "label": "Infraestrutura",
+                "value": "Docker — API e banco em containers"
+            }
+        ],
+        "frontend": [
+            {
+                "label": "Core",
+                "value": "React Native + Expo SDK + Expo Router"
+            },
+            {
+                "label": "Autenticação",
+                "value": "Biometria nativa via expo-local-authentication (Face ID / Fingerprint)"
+            },
+            {
+                "label": "Armazenamento Seguro",
+                "value": "expo-secure-store — JWT salvo com criptografia no dispositivo"
+            },
+            {
+                "label": "Notificações",
+                "value": "expo-notifications — push e foreground"
+            },
+            {
+                "label": "Localização",
+                "value": "expo-location — geolocalização nas solicitações"
+            },
+            {
+                "label": "Build & Deploy",
+                "value": "EAS (Expo Application Services) — builds iOS e Android"
+            }
+        ]
+    },
+    "technologies": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "JWT",
+        "MariaDB",
+        "Flyway",
+        "MapStruct",
+        "Docker",
+        "Firebase FCM",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "EAS"
+    ]
+}

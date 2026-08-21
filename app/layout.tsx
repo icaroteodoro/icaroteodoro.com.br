@@ -105,7 +105,9 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${spaceGrotesk.variable} h-full antialiased font-sans scroll-smooth`}
+
     >
       <body className="min-h-full flex flex-col">
         <GoogleTagManager gtmId="GTM-N8MD4KCH" />

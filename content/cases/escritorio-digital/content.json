@@ -1,0 +1,99 @@
+{
+  "title": "Escritório Digital",
+  "type": "Aplicação Web",
+  "excerpt": "Ecossistema de gestão jurídica sob medida para otimizar fluxos de trabalho, centralizar informações estratégicas e garantir segurança operacional a escritórios de advocacia.",
+  "date": "2024-01-01",
+  "coverImage": "/cases/escritorio-digital/capa.jpeg",
+  "challenge": "A rotina administrativa de advogados e escritórios de advocacia modernos é marcada por processos descentralizados, prazos críticos e gestão financeira complexa. O desafio era transformar essa realidade em uma experiência digital fluida, segura e eficiente de ponta a ponta — eliminando o trabalho manual repetitivo e centralizando tudo em um único ecossistema.",
+  "features": [
+    {
+      "title": "Inteligência Cadastral e Adaptação de Interface",
+      "description": "A interface se adapta em tempo real ao perfil do cliente (PF ou PJ). Perfis corporativos ganham painéis completos com dados empresariais, representantes legais, cargos e documentos. Perfis individuais têm uma visualização ágil em painel lateral. Máscaras dinâmicas garantem consistência no preenchimento.",
+      "image": "/cases/escritorio-digital/tela-2.png",
+      "imageAlt": "Cadastro de Cliente"
+    },
+    {
+      "title": "Controle Ativo de Prazos Judiciais e Kanban",
+      "description": "A plataforma unifica processos por áreas do direito (Cível, Trabalhista, Previdenciário). Alertas visuais ativos evitam a perda de prazos fatais como recursos, contestações e audiências. O quadro Kanban oferece uma visão clara de cada processo e seu estágio.",
+      "image": "/cases/escritorio-digital/tela-3.jpeg",
+      "imageAlt": "Kanban de Processos"
+    },
+    {
+      "title": "Automação do Módulo Financeiro",
+      "description": "Ao cadastrar honorários parcelados, o sistema gera automaticamente todas as parcelas mensais com datas de vencimento sequenciais e acompanhamento de status em tempo real: Pendente, Pago ou Atrasado. Elimina planilhas e cálculos manuais.",
+      "image": null,
+      "imageAlt": null
+    },
+    {
+      "title": "Repositório GED e Automação de Minutas",
+      "description": "Upload seguro de documentos (até 10MB) classificados por categoria e vinculados aos processos. Modelos de procurações e petições com placeholders dinâmicos geram novos documentos prontos instantaneamente com os dados do cliente.",
+      "image": null,
+      "imageAlt": null
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/cases/escritorio-digital/tela-1.jpeg",
+      "alt": "Cadastro de cliente com adaptação PF/PJ em tempo real"
+    },
+    {
+      "src": "/cases/escritorio-digital/tela-2.png",
+      "alt": "Quadro Kanban de processos jurídicos"
+    },
+    {
+      "src": "/cases/escritorio-digital/tela-3.jpeg",
+      "alt": "Dashboard com visão geral financeira e métricas"
+    }
+  ],
+  "stack": {
+    "backend": [
+      {
+        "label": "Linguagem",
+        "value": "Java 21 (LTS)"
+      },
+      {
+        "label": "Framework",
+        "value": "Spring Boot 4.0.2"
+      },
+      {
+        "label": "Arquitetura",
+        "value": "Clean Architecture — Controllers, Services, Repositories, DTOs"
+      },
+      {
+        "label": "Segurança",
+        "value": "Autenticação stateless com JWT via Spring Security"
+      },
+      {
+        "label": "Banco de Dados",
+        "value": "MySQL com versionamento via Flyway"
+      }
+    ],
+    "frontend": [
+      {
+        "label": "Core",
+        "value": "Next.js 16 (App Router), React 19, TypeScript"
+      },
+      {
+        "label": "UI",
+        "value": "TailwindCSS v4 + Shadcn/UI com micro-animações"
+      },
+      {
+        "label": "Infraestrutura",
+        "value": "Docker — paridade entre dev e produção"
+      }
+    ]
+  },
+  "technologies": [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "MySQL",
+    "Flyway",
+    "JWT",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "TailwindCSS",
+    "Docker"
+  ]
+}

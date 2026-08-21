@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { MapPin, ArrowUpRight, Zap, Code2, Server, Database, Smartphone, Mail, Phone } from "lucide-react";
 import { Header } from "@/components/header";
+import { getAllCases } from "@/lib/cases";
 
 const GithubIcon = ({ size = 24, ...props }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -315,6 +317,50 @@ export default function Home() {
               <div className="hidden md:block w-[45%]"></div>
             </div>
 
+          </div>
+        </section>
+        {/* Cases Section */}
+        <section id="cases" className="px-6 py-24 max-w-6xl mx-auto w-full">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Cases & Portfólio</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-xl">
+              Projetos em destaque — o problema que resolvem, as decisões técnicas e a arquitetura utilizada.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {getAllCases().map((caseItem, index) => (
+              <Link href={`/cases/${caseItem.slug}`} key={caseItem.slug} className="group block">
+                <div className="bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-zinc-400 dark:hover:border-zinc-600 transition-all shadow-sm hover:shadow-lg">
+                  <div className="flex flex-col md:flex-row gap-0">
+                    <div className="md:w-2/5 h-60 md:h-auto bg-zinc-100 dark:bg-zinc-900 overflow-hidden shrink-0">
+                      {caseItem.coverImage ? (
+                        <img
+                          src={caseItem.coverImage}
+                          alt={caseItem.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-zinc-400">
+                          Sem Imagem
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 p-8 flex flex-col justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">{caseItem.type}</div>
+                        <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">{caseItem.title}</h3>
+                        <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed line-clamp-3">{caseItem.excerpt}</p>
+                      </div>
+                      <div className="mt-8 flex items-center gap-2 text-zinc-900 dark:text-white font-semibold text-sm">
+                        <span>Ver Case Completo</span>
+                        <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
